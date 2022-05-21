@@ -1,3 +1,5 @@
+[![Ghostfolio](https://avatars.githubusercontent.com/u/82473144?s=200)](https://github.com/ghostfolio/ghostfolio)
+
 # Ghostfolio
 > This is the Unraid Community App Template for Ghostfolio
 
