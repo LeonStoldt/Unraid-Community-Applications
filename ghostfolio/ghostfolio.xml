@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Ghostfolio</Name>
+  <Repository>ghostfolio/ghostfolio</Repository>
+  <Registry>https://hub.docker.com/r/ghostfolio/ghostfolio/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/123829-support-community-applications-ghostfolio/</Support>
+  <Project>https://ghostfol.io/</Project>
+  <Overview>This Community Application provides the official Ghostfolio container.&#xD;
+&#xD;
+Ghostfolio is an open source wealth management software built with web technology. The application empowers busy people to keep track of stocks, ETFs or cryptocurrencies and make solid, data-driven investment decisions.&#xD;
+&#xD;
+Project Page: https://ghostfol.io/&#xD;
+GitHub Repository: https://github.com/ghostfolio/ghostfolio&#xD;
+&#xD;
+CAUTION!&#xD;
+Ghostfolio requires a Postgres and Redis instance to run. Make sure to set them up first and reference the required variables down below.&#xD;
+A detailed description of how to setup ghostfolio can be found in the Support Thread:&#xD;
+https://forums.unraid.net/topic/123829-support-community-applications-ghostfolio/</Overview>
+  <Category>Tools:</Category>
+  <WebUI>http://[IP]:[PORT:3333]</WebUI>
+  <TemplateURL/>
+  <Icon>https://avatars.githubusercontent.com/u/82473144?s=200</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1653163829</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>This Community Application provides the official Ghostfolio container.&#xD;
+&#xD;
+Ghostfolio is an open source wealth management software built with web technology. The application empowers busy people to keep track of stocks, ETFs or cryptocurrencies and make solid, data-driven investment decisions.&#xD;
+&#xD;
+Project Page: https://ghostfol.io/&#xD;
+GitHub Repository: https://github.com/ghostfolio/ghostfolio&#xD;
+&#xD;
+CAUTION!&#xD;
+Ghostfolio requires a Postgres and Redis instance to run. Make sure to set them up first and reference the required variables down below.&#xD;
+A detailed description of how to setup ghostfolio can be found in the Support Thread:&#xD;
+https://forums.unraid.net/topic/123829-support-community-applications-ghostfolio/</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>3333</HostPort>
+        <ContainerPort>3333</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data/>
+  <Environment>
+    <Variable>
+      <Value>redis</Value>
+      <Name>REDIS_HOST</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>postgresql://ghostfolio:password@postgres:5432/ghostfolio-db?sslmode=prefer</Value>
+      <Name>DATABASE_URL</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>123456</Value>
+      <Name>JWT_SECRET_KEY</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>ALPHA_VANTAGE_API_KEY</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>GHOSTFOLIO</Value>
+      <Name>ACCESS_TOKEN_SALT</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="REDIS_HOST" Target="REDIS_HOST" Default="redis" Mode="" Description="Reference your redis container host" Type="Variable" Display="always" Required="true" Mask="false">redis</Config>
+  <Config Name="DATABASE_URL" Target="DATABASE_URL" Default="postgresql://user:password@postgres:5432/ghostfolio-db?sslmode=prefer" Mode="" Description="Connection URL for your postgres container" Type="Variable" Display="always" Required="true" Mask="false">postgresql://ghostfolio:password@postgres:5432/ghostfolio-db?sslmode=prefer</Config>
+  <Config Name="WebUI Port" Target="3333" Default="3333" Mode="tcp" Description="Port for the ghostfolio Web-UI" Type="Port" Display="always" Required="true" Mask="false">3333</Config>
+  <Config Name="JWT_SECRET_KEY" Target="JWT_SECRET_KEY" Default="123456" Mode="" Description="Provide a secure JWT secret key!" Type="Variable" Display="always" Required="true" Mask="true">123456</Config>
+  <Config Name="ALPHA_VANTAGE_API_KEY" Target="ALPHA_VANTAGE_API_KEY" Default="" Mode="" Description="API Key for Alpha Vantage Free Stocks" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="ACCESS_TOKEN_SALT" Target="ACCESS_TOKEN_SALT" Default="GHOSTFOLIO" Mode="" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">GHOSTFOLIO</Config>
+</Container>
