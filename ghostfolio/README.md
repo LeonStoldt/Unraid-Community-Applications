@@ -2,6 +2,7 @@
 
 # Ghostfolio
 > This is the Unraid Community App Template for Ghostfolio
+>
 > Ghostfolio License Information: [AGPL-3.0 license](https://github.com/ghostfolio/ghostfolio/blob/main/LICENSE)
 
 - [Ghostfolio Project Page](https://ghostfol.io/)
