@@ -8,3 +8,5 @@
 - [Ghostfolio Project Page](https://ghostfol.io/)
 - [Ghostfolio Repository](https://github.com/ghostfolio/ghostfolio)
 - [Ghostfolio Unraid Support Thread](https://forums.unraid.net/topic/123829-support-community-applications-ghostfolio/)
+
+[![Ghostfolio](Ghostfolio-Community-App.png)](https://unraid.net/community/apps?q=ghostfolio)
