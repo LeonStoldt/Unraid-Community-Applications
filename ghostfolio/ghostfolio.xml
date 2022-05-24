@@ -20,14 +20,14 @@ CAUTION!&#xD;
 Ghostfolio requires a Postgres and Redis instance to run. Make sure to set them up first and reference the required variables down below.&#xD;
 A detailed description of how to setup ghostfolio can be found in the Support Thread:&#xD;
 https://forums.unraid.net/topic/123829-support-community-applications-ghostfolio/</Overview>
-  <Category>Tools:</Category>
+  <Category>Tools:Utilities</Category>
   <WebUI>http://[IP]:[PORT:3333]</WebUI>
   <TemplateURL/>
   <Icon>https://avatars.githubusercontent.com/u/82473144?s=200</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1653163829</DateInstalled>
+  <DateInstalled/>
   <DonateText/>
   <DonateLink/>
   <Description>This Community Application provides the official Ghostfolio container.&#xD;
@@ -59,6 +59,11 @@ https://forums.unraid.net/topic/123829-support-community-applications-ghostfolio
       <Mode/>
     </Variable>
     <Variable>
+      <Value>6379</Value>
+      <Name>REDIS_PORT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
       <Value>postgresql://ghostfolio:password@postgres:5432/ghostfolio-db?sslmode=prefer</Value>
       <Name>DATABASE_URL</Name>
       <Mode/>
@@ -81,6 +86,7 @@ https://forums.unraid.net/topic/123829-support-community-applications-ghostfolio
   </Environment>
   <Labels/>
   <Config Name="REDIS_HOST" Target="REDIS_HOST" Default="redis" Mode="" Description="Reference your redis container host" Type="Variable" Display="always" Required="true" Mask="false">redis</Config>
+  <Config Name="REDIS_PORT" Target="REDIS_PORT" Default="6379" Mode="" Description="Container Variable: REDIS_PORT" Type="Variable" Display="always" Required="true" Mask="false">6379</Config>
   <Config Name="DATABASE_URL" Target="DATABASE_URL" Default="postgresql://user:password@postgres:5432/ghostfolio-db?sslmode=prefer" Mode="" Description="Connection URL for your postgres container" Type="Variable" Display="always" Required="true" Mask="false">postgresql://ghostfolio:password@postgres:5432/ghostfolio-db?sslmode=prefer</Config>
   <Config Name="WebUI Port" Target="3333" Default="3333" Mode="tcp" Description="Port for the ghostfolio Web-UI" Type="Port" Display="always" Required="true" Mask="false">3333</Config>
   <Config Name="JWT_SECRET_KEY" Target="JWT_SECRET_KEY" Default="123456" Mode="" Description="Provide a secure JWT secret key!" Type="Variable" Display="always" Required="true" Mask="true">123456</Config>
