@@ -54,7 +54,7 @@ https://forums.unraid.net/topic/123829-support-community-applications-ghostfolio
   <Data/>
   <Environment>
     <Variable>
-      <Value>redis</Value>
+      <Value/>
       <Name>REDIS_HOST</Name>
       <Mode/>
     </Variable>
@@ -64,18 +64,28 @@ https://forums.unraid.net/topic/123829-support-community-applications-ghostfolio
       <Mode/>
     </Variable>
     <Variable>
-      <Value>postgresql://ghostfolio:password@postgres:5432/ghostfolio-db?sslmode=prefer</Value>
+      <Value>postgresql://[USER]:[PASSWORD]@[HOST]:5432/ghostfolio-db?sslmode=prefer</Value>
       <Name>DATABASE_URL</Name>
       <Mode/>
     </Variable>
     <Variable>
-      <Value>123456</Value>
-      <Name>JWT_SECRET_KEY</Name>
+      <Value>USD</Value>
+      <Name>BASE_CURRENCY</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>REDIS_PASSWORD</Name>
       <Mode/>
     </Variable>
     <Variable>
       <Value/>
       <Name>ALPHA_VANTAGE_API_KEY</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>123456</Value>
+      <Name>JWT_SECRET_KEY</Name>
       <Mode/>
     </Variable>
     <Variable>
@@ -85,11 +95,13 @@ https://forums.unraid.net/topic/123829-support-community-applications-ghostfolio
     </Variable>
   </Environment>
   <Labels/>
-  <Config Name="REDIS_HOST" Target="REDIS_HOST" Default="redis" Mode="" Description="Reference your redis container host" Type="Variable" Display="always" Required="true" Mask="false">redis</Config>
+  <Config Name="REDIS_HOST" Target="REDIS_HOST" Default="" Mode="" Description="Reference your redis container host" Type="Variable" Display="always" Required="true" Mask="false"/>
   <Config Name="REDIS_PORT" Target="REDIS_PORT" Default="6379" Mode="" Description="Container Variable: REDIS_PORT" Type="Variable" Display="always" Required="true" Mask="false">6379</Config>
-  <Config Name="DATABASE_URL" Target="DATABASE_URL" Default="postgresql://user:password@postgres:5432/ghostfolio-db?sslmode=prefer" Mode="" Description="Connection URL for your postgres container" Type="Variable" Display="always" Required="true" Mask="false">postgresql://ghostfolio:password@postgres:5432/ghostfolio-db?sslmode=prefer</Config>
+  <Config Name="DATABASE_URL" Target="DATABASE_URL" Default="postgresql://[USER]:[PASSWORD]@[HOST]:5432/ghostfolio-db?sslmode=prefer" Mode="" Description="Connection URL for your postgres container" Type="Variable" Display="always" Required="true" Mask="false">postgresql://[USER]:[PASSWORD]@[HOST]:5432/ghostfolio-db?sslmode=prefer</Config>
   <Config Name="WebUI Port" Target="3333" Default="3333" Mode="tcp" Description="Port for the ghostfolio Web-UI" Type="Port" Display="always" Required="true" Mask="false">3333</Config>
-  <Config Name="JWT_SECRET_KEY" Target="JWT_SECRET_KEY" Default="123456" Mode="" Description="Provide a secure JWT secret key!" Type="Variable" Display="always" Required="true" Mask="true">123456</Config>
+  <Config Name="BASE_CURRENCY" Target="BASE_CURRENCY" Default="USD" Mode="" Description="Base Currency of Ghostfolio e.g. USD, EUR" Type="Variable" Display="always" Required="false" Mask="false">USD</Config>
+  <Config Name="REDIS_PASSWORD" Target="REDIS_PASSWORD" Default="" Mode="" Description="If your redis is secured by a password" Type="Variable" Display="advanced" Required="false" Mask="true"/>
   <Config Name="ALPHA_VANTAGE_API_KEY" Target="ALPHA_VANTAGE_API_KEY" Default="" Mode="" Description="API Key for Alpha Vantage Free Stocks" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="JWT_SECRET_KEY" Target="JWT_SECRET_KEY" Default="123456" Mode="" Description="Provide a secure JWT secret key!" Type="Variable" Display="advanced" Required="true" Mask="true">123456</Config>
   <Config Name="ACCESS_TOKEN_SALT" Target="ACCESS_TOKEN_SALT" Default="GHOSTFOLIO" Mode="" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">GHOSTFOLIO</Config>
 </Container>
