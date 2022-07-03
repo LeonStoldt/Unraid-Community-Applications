@@ -84,6 +84,11 @@ https://forums.unraid.net/topic/123829-support-community-applications-ghostfolio
       <Mode/>
     </Variable>
     <Variable>
+      <Value/>
+      <Name>EOD_HISTORICAL_DATA_API_KEY</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
       <Value>123456</Value>
       <Name>JWT_SECRET_KEY</Name>
       <Mode/>
@@ -102,6 +107,7 @@ https://forums.unraid.net/topic/123829-support-community-applications-ghostfolio
   <Config Name="BASE_CURRENCY" Target="BASE_CURRENCY" Default="USD" Mode="" Description="Base Currency of Ghostfolio e.g. USD, EUR" Type="Variable" Display="always" Required="false" Mask="false">USD</Config>
   <Config Name="REDIS_PASSWORD" Target="REDIS_PASSWORD" Default="" Mode="" Description="If your redis is secured by a password" Type="Variable" Display="advanced" Required="false" Mask="true"/>
   <Config Name="ALPHA_VANTAGE_API_KEY" Target="ALPHA_VANTAGE_API_KEY" Default="" Mode="" Description="API Key for Alpha Vantage Free Stocks" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="EOD_HISTORICAL_DATA_API_KEY" Target="EOD_HISTORICAL_DATA_API_KEY" Default="" Mode="" Description="API Key for EOD Historical Data" Type="Variable" Display="advanced" Required="false" Mask="false"/>
   <Config Name="JWT_SECRET_KEY" Target="JWT_SECRET_KEY" Default="123456" Mode="" Description="Provide a secure JWT secret key!" Type="Variable" Display="advanced" Required="true" Mask="true">123456</Config>
   <Config Name="ACCESS_TOKEN_SALT" Target="ACCESS_TOKEN_SALT" Default="GHOSTFOLIO" Mode="" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">GHOSTFOLIO</Config>
 </Container>
