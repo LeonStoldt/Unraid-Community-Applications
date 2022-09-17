@@ -98,6 +98,11 @@ https://forums.unraid.net/topic/123829-support-community-applications-ghostfolio
       <Name>ACCESS_TOKEN_SALT</Name>
       <Mode/>
     </Variable>
+    <Variable>
+      <Value>production</Value>
+      <Name>NODE_ENV</Name>
+      <Mode/>
+    </Variable>
   </Environment>
   <Labels/>
   <Config Name="REDIS_HOST" Target="REDIS_HOST" Default="" Mode="" Description="Reference your redis container host" Type="Variable" Display="always" Required="true" Mask="false"/>
@@ -110,4 +115,5 @@ https://forums.unraid.net/topic/123829-support-community-applications-ghostfolio
   <Config Name="EOD_HISTORICAL_DATA_API_KEY" Target="EOD_HISTORICAL_DATA_API_KEY" Default="" Mode="" Description="API Key for EOD Historical Data" Type="Variable" Display="advanced" Required="false" Mask="false"/>
   <Config Name="JWT_SECRET_KEY" Target="JWT_SECRET_KEY" Default="123456" Mode="" Description="Provide a secure JWT secret key!" Type="Variable" Display="advanced" Required="true" Mask="true">123456</Config>
   <Config Name="ACCESS_TOKEN_SALT" Target="ACCESS_TOKEN_SALT" Default="GHOSTFOLIO" Mode="" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">GHOSTFOLIO</Config>
+  <Config Name="NODE_ENV" Target="NODE_ENV" Default="production" Mode="" Description="Set NODE_ENV to production to fix issue#1259" Type="Variable" Display="advanced-hide" Required="false" Mask="false">production</Config>
 </Container>
