@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>Ghostfolio</Name>
-  <Repository>ghostfolio/ghostfolio</Repository>
+  <Repository>ghostfolio/ghostfolio:1.282.0</Repository>
   <Registry>https://hub.docker.com/r/ghostfolio/ghostfolio/</Registry>
   <Network>bridge</Network>
   <MyIP/>
